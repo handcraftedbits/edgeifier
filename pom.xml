@@ -24,7 +24,7 @@
   <name>edgeifier</name>
   <description>A Java library for generating test values, particularly for edge cases</description>
   <url>https://github.com/handcraftedbits/edgeifier</url>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <inceptionYear>2018</inceptionYear>
 
   <parent>

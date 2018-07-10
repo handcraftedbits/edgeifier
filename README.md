@@ -1,4 +1,4 @@
-# Edgeifier [![Maven](https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/com/handcraftedbits/edgeifier/edgeifier/maven-metadata.xml.svg)](https://mvnrepository.com/artifact/com.handcraftedbits.edgeifier/edgeifier/1.0.0) [![Build Status](https://travis-ci.org/handcraftedbits/edgeifier.svg?branch=master)](https://travis-ci.org/handcraftedbits/edgeifier) [![Coverage Status](https://coveralls.io/repos/github/handcraftedbits/edgeifier/badge.svg)](https://coveralls.io/github/handcraftedbits/edgeifier) [![Javadocs](https://javadoc.io/badge/com.handcraftedbits.edgeifier/edgeifier-api.svg)](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api)
+# Edgeifier [![Maven](https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/com/handcraftedbits/edgeifier/edgeifier/maven-metadata.xml.svg)](https://mvnrepository.com/artifact/com.handcraftedbits.edgeifier/edgeifier/1.0.1) [![Build Status](https://travis-ci.org/handcraftedbits/edgeifier.svg?branch=master)](https://travis-ci.org/handcraftedbits/edgeifier) [![Coverage Status](https://coveralls.io/repos/github/handcraftedbits/edgeifier/badge.svg)](https://coveralls.io/github/handcraftedbits/edgeifier) [![Javadocs](https://javadoc.io/badge/com.handcraftedbits.edgeifier/edgeifier-api.svg)](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api)
 
 A Java library for generating test values, particularly for edge cases.
 
@@ -30,12 +30,12 @@ Add the following dependencies to your `pom.xml` file:
 <dependency>
   <groupId>com.handcraftedbits.edgeifier</groupId>
   <artifactId>edgeifier-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 <dependency>
   <groupId>com.handcraftedbits.edgeifier</groupId>
   <artifactId>edgeifier-impl</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <scope>runtime</scope>
 </dependency>
 ```
@@ -92,7 +92,7 @@ Note that we use [`Stream.limit()`](https://docs.oracle.com/javase/8/docs/api/ja
 to limit the number of values generated; the `Stream`s created by Edgeifier are infinite by default.  You should use a
 limit that makes sense in your situation.
 
-Consult the [Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/value/primitive/package-summary.html)
+Consult the [Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/value/primitive/package-summary.html)
 for additional information on generating primitive types.
 
 ## Strings
@@ -171,10 +171,10 @@ characters in length.  Keeping in mind edge cases though, we should also specifi
 characters in length.  To _negatively_ test our validator, we can use this same `ValueBuilder` and test with URLs of
 length greater than `1024` characters.  We should also make a similar `ValueBuilder` that contains e.g., bad schemes,
 invalid ports, etc.  More information about generating `String` values can be found in the
-[Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/value/string/package-summary.html).
+[Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/value/string/package-summary.html).
 
 As an added convenience, Edgeifier includes a utility class to help generate characters from all of the Unicode
-character classes.  See the [`UnicodeBuilder` Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/util/UnicodeBuilder.html)
+character classes.  See the [`UnicodeBuilder` Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/util/UnicodeBuilder.html)
 for more information.
 
 ## Collections
@@ -189,12 +189,12 @@ ValueBuilder<List<Integer>> lists = edgeifier.makeListsLike()
      .withLengthBetween(5, 11); // Note that maximum length is exclusive.
 ```
 
-For more information, see the [Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/value/collection/package-summary.html).
+For more information, see the [Javadoc](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/value/collection/package-summary.html).
 
 ## Custom Types
 
 Edgeifier can generate custom types via 
-[`CustomValueProvider`](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/value/custom/CustomValueProvider.html)
+[`CustomValueProvider`](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/value/custom/CustomValueProvider.html)
 instances.  As an example, let's use Edgeifier to generate random instances of the following bean:
 
 ```java
@@ -238,7 +238,7 @@ are generating an infinite stream of integers between `0` and `max` and selectin
 `TestBean.value`.
 
 Next, we need to create a 
-[`CustomValueProviderFactory`](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.0/com/handcraftedbits/edgeifier/api/value/custom/CustomValueProviderFactory.html)
+[`CustomValueProviderFactory`](https://javadoc.io/doc/com.handcraftedbits.edgeifier/edgeifier-api/1.0.1/com/handcraftedbits/edgeifier/api/value/custom/CustomValueProviderFactory.html)
 class that will help Edgeifier create instances of our `CustomValueProvider`:
 
 ```java
