@@ -32,6 +32,7 @@
     <checkstyle.suppressions.location>
       src/main/codequality/checkstyle-suppressions.xml
     </checkstyle.suppressions.location>
+    <javadoc.excludedPackages></javadoc.excludedPackages>
   </properties>
   
   <dependencies>
